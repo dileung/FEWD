@@ -1,3 +1,3 @@
 This is Fion. 
 
-My project is to create a job and customer hunting platform for people in creative services. 
+My project is to create a platform for people in creative services to connect with employers and customers. 
