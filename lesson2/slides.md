@@ -39,7 +39,7 @@ Merge latest changes from tijptjik/FEWD to your forked repo
 1. Fetch new updates from the upstream repo to your machine
   * `git fetch upstream`
 1. Merge the upstream commits to your local repo
-  * `git merge upstream/gh-pages`
+  * `git merge upstream/gh-pages -m "YOUR COMMIT MSG"`
 1. Push the new commits to your forked repo
   * `git push origin gh-pages`
 
@@ -391,7 +391,7 @@ body { font-style: italic; }
 font-weight
 
 ```
-body { font-style: bold; }
+body { font-weight: bold; }
 ```
 
 
