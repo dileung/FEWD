@@ -1,0 +1,17 @@
+body{
+	background-image: url(../images/bg_body.jpg); 
+}
+
+#header-wrapper {
+	background-image: url(../images/bg_wrapper.png);
+	height: 488px;
+}
+
+#container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+body {
+	color: red; 
+}

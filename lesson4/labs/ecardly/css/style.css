@@ -26,5 +26,78 @@ Developer @GA in NYC
 	clear: both;
 }
 
+#header-wrapper {
+     background-image: url(../images/background.jpg);
+     height: 162px;
+     margin: 0 auto;
+}
 
+h1.ecardly {
+  width: 216px;
+  height: 213px;
+  background: url(../images/logo.png);
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 auto;
+}
 
+body {
+     background-color: #d6d6d6;
+     color: #000000;
+}
+
+.container {
+     width: 940px;
+     height: 500px; 
+     margin: 0 auto;
+}
+
+div.container h2 {
+     font-size: 20px;
+}
+
+#main {
+     width: 640px;
+     background-color: white;
+     margin: 0px 10px 0px 0px;
+     padding: 20px;
+     float: left;
+}
+
+#sidebar {
+     width: 280px;
+     padding: 30px;
+     background-color: white;
+     margin: 0px 0px 0px 10px; 
+     float: left;
+}
+
+#sidebar ul{
+padding: 0px;
+}
+
+p {
+     font-size: 12px; 
+     border-bottom-style: dotted;
+     border-bottom-width: thin; 
+}
+
+a {
+     color:#cc6633;
+     font-style: bold; 
+}
+
+p.comments {
+     border-bottom-style: solid; 
+     border-bottom-width: thin; 
+}
+
+img.sideimage {
+     margin: 10px 0px;
+}
+
+footer {
+     margin: 30px;
+     text-align: center; 
+}
