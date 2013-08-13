@@ -35,5 +35,71 @@ a:hover {
 	
 .clear {
 	clear: both;
+} 
+
+@media (min-width: 559px) {
+	#contain {
+		margin: 0 auto;
+	}
+	.span-one-third {
+		float: left; 
+		width: 31% 
+	}
 }
-	
+
+@media (min-width: 479px) and (max-width: 559px) {
+#container {
+	width: ; 
+	}	
+.span-one-third {
+	color: ; 
+	float: ; 
+	width: ; 
+	}
+}
+
+@media (min-width: 559px) and (max-width: 767px) {
+#container {
+	width: ; 
+	}	
+.span-one-third {
+	color: ; 
+	float: ; 
+	width: ; 
+	}
+}
+
+@media (min-width: 767px) and (max-width: 959px) {
+#container {
+	width: ; 
+	}	
+.span-one-third {
+	color: ; 
+	float: ; 
+	width: ; 
+	}
+}
+
+@media (min-width: 959px) and (max-width: 1159px) {
+#container {
+	width: ; 
+	}	
+.span-one-third {
+	color: ; 
+	float: ; 
+	width: ; 
+	}
+}
+
+@media (min-width: 1159px) {
+#container {
+	width: ; 
+	}	
+.span-one-third {
+	color: ; 
+	float: ; 
+	width: ; 
+	}
+}
+
+

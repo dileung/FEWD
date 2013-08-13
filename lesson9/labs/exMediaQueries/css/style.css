@@ -50,11 +50,6 @@ nav a:hover {
 	height:0;
 }
 
-/* Tablet Layout: 768px.
- * Gutters: 24px.
- * Outer margins: 28px.
- * Inherits styles from: Default Layout.
- */
 
 
 
@@ -64,7 +59,28 @@ nav a:hover {
  * Inherits styles from: Default Layout.
  */
 
+@media only screen and (min-width: 319px) and (max-width: 479px) {
+	body {
+		background-color: fuchsia; 
+	}
+	header object {
+	width:25%;
+	height:165px;
+	float: left; 
+	margin-left: 80px; 
+	}
 
+	nav { 
+		margin-top: 200px; 
+		margin-left: 50px; 
+	}
+
+	nav a {
+		float: none; 
+		font-size: 120%; 
+	}
+
+}
 
 /* Wide Mobile Layout: 480px.
  * Gutters: 24px.
@@ -72,8 +88,49 @@ nav a:hover {
  * Inherits styles from: Default Layout, Mobile Layout.
  */
 
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+body {
+	background-color: lime; 
+}
+header object {
+	width: 25%;
+	height:150px;
+	float: left;
+}
 
+	nav {
+		margin-left: 200px;
+	}
+	nav a {
+		float: none; 
+	}
+} 
 
+/* Tablet Layout: 768px.
+ * Gutters: 24px.
+ * Outer margins: 28px.
+ * Inherits styles from: Default Layout.
+ */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+body {
+	background-color: aqua; 
+}
+header object {
+	width:100%;
+	height:200px;
+}
+}
+
+@media only screen and (min-width: 992px) {
+body {
+	background-color: #efefef; 
+}
+header object {
+	width:100%;
+	height:250px;
+}
+} 
 /* Printable Layout
  * Inherits styles from: Default Layout.
  */
