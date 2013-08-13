@@ -10,10 +10,21 @@ body {
 color: white; 
 }
 #header-wrapper li {
-float: left; 
-padding-right: 30px;
-padding-top: 30px;  
+	float: left; 
+	padding-right: 15px;
+	padding-left: 15px;
 }
+
+#header-wrapper nav li a {
+	display: block; 
+	width: 100px; 
+	padding-top: 30px; 
+	padding-bottom: 30px; 
+	text-align: center; 
+	color: white; 
+	text-decoration: none; 
+}
+
 #header-wrapper nav {
 margin-top: -16px;
 margin-left: -35px; 
@@ -26,9 +37,12 @@ visibility: hidden;
 line-height: 0;
 height: 0;
 }
-#header-wrapper li:hover {
-background-image: url(../images/bg_nav_rollover.png);
+#header-wrapper li a:hover {
+background-image: url(../images/bg_nav_rollover.png); 
+height: 77px; 
+background-repeat: repeat-x;
 }
+
 h1.busyhands {
 width: 291px;
 height: 54px;
@@ -69,6 +83,7 @@ padding-top: 20px;
 width: 290px; 
 font-family: Arial, "New Times Roman", Serif; 
 font-size: 12px; 
+padding-bottom: 20px; 
 }
 .boximage {
 border: 6px solid lightgrey 
@@ -80,7 +95,7 @@ margin-top: 90px;
 #socialmedia ul li {
 display:inline-block;
 width: 30px;
-height: 30px;
+height: 60px;
 background:blue;	
 text-indent:-9999em;
 }
@@ -113,4 +128,14 @@ background-color: black;
 }
 h3 {
 color: white; 
+}
+
+#parent {
+	margin: 0 auto;
+	width: 960px; 
+}
+
+.widget {
+	float: left;
+	width: 320px; 
 }
