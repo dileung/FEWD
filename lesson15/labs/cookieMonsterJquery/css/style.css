@@ -47,7 +47,7 @@ a {
 
 
 /* Layout */
-
+#container.colored-container { background-color: red;}
 
 #container {
 	padding: 15px; /* add a bit of padding around all the content inside our container */
