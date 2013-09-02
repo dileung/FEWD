@@ -9,8 +9,11 @@
  * Create a 'for' loop that populates an array with the numbers 1 through 10 
  */
    var myArray = [];
-
-
+// myArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+for (i = 1; i <= 10; i++){
+	// console.log(i); 
+	myArray.push(i); 
+}
 
 /**
  * Question 2
@@ -20,6 +23,11 @@
 var sub = 100;
 var start = 1;
 
+while (start <= 10) {
+	sub = sub - start; 	
+	start++; 
+	// console.log(sub); 
+}
 
 
 /**
@@ -30,6 +38,18 @@ var start = 1;
 var someNums = [3, 1, 88, -1, 33, 96, 35, 12, 72];
 var largest_num = someNums[0];
 
+// console.log(someNums.sort()); 
+// console.log(someNums.length - 1); 
+
+for (i = 0; i < someNums.length; i++){
+	// console.log('largest_num: ' + largest_num); 
+	// console.log('someNums[i] ' + someNums[i]); 
+	if (largest_num < someNums[i]) {
+		largest_num = someNums[i]; 
+	}
+	// console.log ('result: ' + largest_num)
+}
+
 
 
 /**
@@ -39,6 +59,15 @@ var largest_num = someNums[0];
  */
 var small = someNums[0];
 
+for (i = 0; i <someNums.length; i++){
+	// console.log('small: ' + small); 
+	// console.log('someNums[i]:' + someNums[i])
+	if (small > someNums[i]) {
+		small = someNums[i]; 
+	}
+}
+
+
 /**
  * Question 5
  * Count how many elements appear in BOTH arrays. Store the number of duplicates in the 
@@ -47,7 +76,21 @@ var small = someNums[0];
  */
 var firstArray = ['peaches', 'apples', 'pears', 'oranges', 'plums', 'water melon', 'strawberries'];
 var secondArray = ['blueberries', 'water melon', 'tomatoes', 'apples', 'plums', 'oranges', 'cantaloupe'];
+var resultSet = []; 
 var totalDuplicates = 0;
+
+for (i = 0; i < firstArray.length; i++){
+	// console.log(firstArray[i]); 
+	for (j = 0; j < secondArray.length; j++) {
+		// console.log(secondArray[j]); 
+		if (firstArray[i] == secondArray[j]){
+			resultSet.push(firstArray[i]); 
+			totalDuplicates++; 
+		}
+		// console.log(firstArray[i] + 'VS' + secondArray[j] + ': ' + totalDuplicates); 
+		// console.log(resultSet); 
+	} 
+}
 
 
 /**
@@ -59,4 +102,6 @@ var totalDuplicates = 0;
 
 var numbers = [3, 7, 1, 3, 23, 7, 98, 26, 1];
 var totalUniques = 0;
+
+
 

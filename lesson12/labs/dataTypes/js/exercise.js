@@ -15,14 +15,14 @@ console.log(q1);
  * Using double quotes, create a string from the following text: What's the time?
  */
 
-
+var q2 ="What's the time?"
 
 /**
  * Question 3
  * Using single quotes, create a string from the following text: Title "JavaScript Programming"
  */
 
-
+var q3 ='Title "JavaScript Programming"' 
 
 
 /**
@@ -30,6 +30,7 @@ console.log(q1);
  * Using double quotes, create a string from the following text, using escaping techniques: Escape "me"
  */
 
+var q4 = "Escape \"me\""
 
 
 /**
@@ -37,6 +38,7 @@ console.log(q1);
  * Using mathematical equation, output the number 8.
  */
 
+var q5 = 4 + 4; 
 
 
 /**
@@ -44,6 +46,7 @@ console.log(q1);
  * Using mathematical equation, output the number 1.5.
  */
 
+var q6 = 3 / 2; 
 
 
 /**
@@ -51,6 +54,7 @@ console.log(q1);
  * Using mathematical equation, output the number -5.
  */
 
+var q7 = 0 - 5; 
 
 
 
