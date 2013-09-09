@@ -93,21 +93,74 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+#headerwrapper {
+    height: 85px; 
+    background-image: url(../images/orange-block.jpg);
+    background-repeat: repeat-x; 
+}
 
+h1 {
+    margin-left: 200px; 
+    float: left;
+}
 
+#searchbar {
+ margin-top: 30px; 
+ margin-left: 220px; 
+ margin-right: 155px;
+ float: left; 
+}
 
+#signin {
+    display: block;
+    padding: 26px; 
+    text-align: center; 
+    text-decoration: none; 
+    float: left; 
+    color: black; 
+    font-size: 20px; 
+}
 
+#checkin {
+    display: block;
+    padding: 26px; 
+    text-align: center; 
+    text-decoration: none; 
+    float: left;
+    color: black; 
+    font-size: 20px; 
+}
 
+/*#maincontainer {
+    margin: 0 auto;
+    width: 1500px; */
+    
+}
 
+/*body {
+    background-image: url(../images/earth1.jpg); 
+    background-position: fixed; 
+    background-size: 100% 100%; 
+    height: 1000px; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}*/
 
+/*.animalbox {
+    height:450px;
+    width: 365px; 
+    background-color: white; 
+    margin-top: 20px; 
+    float: left; 
+    margin-left: -125px;
+    margin-right: 140px;
+}
 
-
-
-
-
-
-
-
+.animalbox img{
+    padding-left: 8px; 
+    padding-top: 8px; 
+}
+*/
 
 /* ==========================================================================
    Helper classes

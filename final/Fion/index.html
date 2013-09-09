@@ -6,9 +6,14 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
+        <title>WWWild</title>
+        <meta name="WWWild, wild, animals, wildlife, nature" content="Capture and Share the World's Wildlife. WWWild is a fun and beautiful way to map the natural world onto the world wide web.">
         <meta name="viewport" content="width=device-width">
+        <style type="text/css">
+            html { height: 100% }
+            body { height: 100%; margin: 0; padding: 0 }
+            #map-canvas { height: 100%; width: 100% }
+        </style>
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -17,23 +22,60 @@
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
+
+        <div id="headerwrapper" class="clearfix"> 
+            <header>
+                <h1>WWWild</h1>
+      <!--           <h2>Mapping the natural world onto the world wide web</h2> -->
+            </header>
+            <div id="searchbar"> 
+                 <form id="cse-search-box" action="http://google.com/cse">
+                  <input type="hidden" name="cx" value="YOUR SEARCH ENGINE ID goes here" />
+                  <input type="hidden" name="ie" value="UTF-8" />
+                  <input type="text" name="q" size="31" />
+                  <input type="submit" name="sa" value="Search" />
+                </form>
+            </div> 
+
+            <a id="signin" href="#">Sign In</a> 
+            <a id="checkin" href="#">Check In</a> 
+         </div> 
+
+        
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+     <!--    
+        <div id="maincontainer">
+            <div class="animalbox">
+                <img src="./images/greywhale.jpg" alt="grey whale" height="350" width="350">
+            </div>
+             <div class="animalbox">
+                <img src="./images/greywhale.jpg" alt="grey whale" height="350" width="350">
+            </div>
+            <div class="animalbox">
+                <img src="./images/greywhale.jpg" alt="grey whale" height="350" width="350">
+            </div>
+        </div> -->
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <div id="map-canvas">
+
+        </div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA60QcOlk-jhCGKM_RsQoBRWOqVNnCjXI4&v=3.exp&sensor=false&libraries=visualization"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='//www.google-analytics.com/ga.js';
+            g.src='http://www.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
     </body>
