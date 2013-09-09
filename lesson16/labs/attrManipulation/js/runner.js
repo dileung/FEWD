@@ -21,7 +21,7 @@ function is_empty(obj) {
 check("1", "q1" in window && q1 == "http://placekitten.com/200/300");
 check("2", $("#fig1 img").attr("src") == "http://placekitten.com/500/200");
 check("3", "q3" in window && q3 == "banner");
-check("4", $("#the-facts li").hasClass("success"));
+check("4", $("#the-facts li").addClass("success"));
 check("5", $("#fig2").hasClass("awesome"));
 check("6", $("p.warn").length === 0);
 check("7", $("#the-facts li.success").length === 3);
