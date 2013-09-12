@@ -7,7 +7,7 @@
  *    again.
 
  *
- * 2) Use the mouseMove event to show the current position of the mouse using the HTML snippet provided
+ * 2) Use the mousemove() event to show the current position of the mouse using the HTML snippet provided
  */
 
 $('#mouseBox').click(function(){
