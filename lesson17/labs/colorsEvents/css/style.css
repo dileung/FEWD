@@ -6,6 +6,10 @@
 	padding: 10px;
 	font-family: monospace;
 }
+#controls a {
+	font-size: 24px;
+	text-decoration: none; 
+}
 
 #left, #right
 {
