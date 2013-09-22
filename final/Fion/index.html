@@ -9,23 +9,21 @@
         <title>WWWild</title>
         <meta name="WWWild, wild, animals, wildlife, nature" content="Capture and Share the World's Wildlife. WWWild is a fun and beautiful way to map the natural world onto the world wide web.">
         <meta name="viewport" content="width=device-width">
-        <style type="text/css">
-            html { height: 100% }
-            body { height: 100%; margin: 0; padding: 0 }
-            #map-canvas { height: 100%; width: 100% }
-        </style>
+        <script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
+        <link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
+          <!--[if lte IE 8]>
+            <link href='//api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.ie.css' rel='stylesheet'>
+          <![endif]-->
 
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/normalize.css">
+        <link rel="stylesheet" type="text/css" href="css/960_12_col.css">
     </head>
     <body>
 
-        <div id="headerwrapper" class="clearfix"> 
+    <div id="headerwrapper" class="clearfix"> 
             <header>
-                <h1>WWWild</h1>
+                <h1>wwwild</h1>
       <!--           <h2>Mapping the natural world onto the world wide web</h2> -->
             </header>
             <div id="searchbar"> 
@@ -37,50 +35,209 @@
                 </form>
             </div> 
 
-            <!-- <a id="signin" href="#">Sign In</a> 
-            <a id="checkin" href="#">Check In</a> -->
-            <div>
-              <input id="address" type="textbox" value="Sydney, NSW">
-              <input type="button" value="Encode" onclick="codeAddress()">
-            </div>
-         </div> 
+            <a id="signin" href="#">Sign In</a> 
+            <a id="checkin" href="#">Check In</a>
+   
 
-        
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+  <div id='output'>
+    click: <code id='click'></code><br/>
+    mousemove: <code id='mousemove'></code><br/>
+  </div>
+  <div id='map'></div>
+  <!-- <div id='info'></div> -->
+  <style>
+  .popup {
+      text-align: center;
+  }
+  .popup img {
+      width: 100%;
+  }
+  </style>
 
-        <!-- Add your site or application content here -->
-     <!--    
-        <div id="maincontainer">
-            <div class="animalbox">
-                <img src="./images/greywhale.jpg" alt="grey whale" height="350" width="350">
-            </div>
-             <div class="animalbox">
-                <img src="./images/greywhale.jpg" alt="grey whale" height="350" width="350">
-            </div>
-            <div class="animalbox">
-                <img src="./images/greywhale.jpg" alt="grey whale" height="350" width="350">
-            </div>
-        </div> -->
+  <script>
+  var map = L.mapbox.map('map', 'dileung.map-8cts8z58');
+  var geocoder = L.mapbox.geocoder('dileung.map-8cts8z58'); 
 
-        <div id="map-canvas">
+  geocoder.query('Tofino', function(error, result){
+    console.log(error);
+    console.log(result); 
+    map.setView([result.latlng[0], result.latlng[1]], 13)
+  ; }); 
 
-        </div>
 
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA60QcOlk-jhCGKM_RsQoBRWOqVNnCjXI4&v=3.exp&sensor=false&libraries=visualization"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  function showMap(err, data) {
+       map.fitBounds(data.lbounds);
+  }
 
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
+  var click = document.getElementById('click'),
+    mousemove = document.getElementById('mousemove');
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src='http://www.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    </body>
+  map.on('mousemove click', function(e) {
+    window[e.type].innerHTML = e.containerPoint.toString() + ', ' + e.latlng.toString();
+  });
+
+// markers 
+
+var geoJson = {
+    type: 'FeatureCollection',
+    features: [{
+        type: 'Feature',
+        properties: {
+            title: 'Wolf',
+      description: 'saw it going for a swim',    
+      'marker-size': 'medium',
+          'marker-color': '#f0a',
+          "image": "./images/wolf.jpg"
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-125.858816464705, 49.1195930894399]
+        }
+    },
+    {
+        type: 'Feature',
+        properties: {
+            title: 'Killer Whales',
+            description: 'Hello Killer Whale family!',    
+      'marker-size': 'medium',
+          'marker-color': '#f0a', 
+          'image': 'images/killerwhales.jpg'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-125.958816464705, 49.1225930894399]
+        }
+    }, 
+    {
+        type: 'Feature',
+        properties: {
+            title: 'Puffin',
+            description: 'bird',    
+            'marker-size': 'medium',
+            'marker-color': '#f0a', 
+            'image': 'images/puffin.jpg'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-125.88032, 49.10635]
+        }
+    }, 
+    {
+        type: 'Feature',
+        properties: {
+            title: 'Black Bear',
+            description: 'Trying to get lucky with fish during low tide',    
+            'marker-size': 'medium',
+            'marker-color': '#f0a', 
+            'image': 'images/bear.jpg'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-125.87105, 49.14949]
+        }
+
+    }, 
+    
+    {
+        type: 'Feature',
+        properties: {
+            title: 'Grey whale',
+            description: 'Saw 20 grey whales feeding in the bay area!',    
+            'marker-size': 'medium',
+            'marker-color': '#f0a', 
+            'image': 'images/greywhale.jpg'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-125.96701 , 49.14904]
+        }
+
+    },
+   {
+        type: 'Feature',
+        properties: {
+            title: 'Humpback Whale',
+            description: 'Just wow',    
+            'marker-size': 'medium',
+            'marker-color': '#f0a', 
+            'image': 'images/humpback1.jpg'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-125.95877 , 49.14489]
+        }
+
+    }, 
+    {
+        type: 'Feature',
+        properties: {
+            title: 'Humpback Whale',
+            description: 'Kayaking is the best way to whale watch',    
+            'marker-size': 'medium',
+            'marker-color': '#f0a', 
+            'image': 'images/humpback3.jpg'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-125.95173 , 49.13882]
+        }
+
+    }, 
+    {
+        type: 'Feature',
+        properties: {
+            title: 'Seals',
+            description: 'just chilling',    
+            'marker-size': 'medium',
+            'marker-color': '#f0a', 
+            'image': 'images/sealisland.jpg'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-125.92375 , 49.11141]
+        }
+
+    }, 
+    {
+        type: 'Feature',
+        properties: {
+            title: 'Sea Otters',
+            description: 'lol',    
+            'marker-size': 'medium',
+            'marker-color': '#f0a', 
+            'image': 'images/seaotters.jpg'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-125.92323 , 49.12208]
+        }
+
+    }
+
+    ]}; 
+
+
+map.markerLayer.on('layeradd', function(e) {
+    var marker = e.layer,
+        feature = marker.feature;
+
+    // Create custom popup content
+    var popupContent =  '<a target="_blank" class="popup" href="' + feature.properties.url + '">' +
+                            '<img src="' + feature.properties.image + '">' +
+                        '   <h2>' + feature.properties.title + '</h2>' + '<p>' + feature.properties.description + '</p>' + 
+                        '</a>';
+
+    // http://leafletjs.com/reference.html#popup
+    marker.bindPopup(popupContent,{
+        closeButton: false,
+        minWidth: 320
+    }).on('mouseover', function() { marker.openPopup(); }).on('mouseout', function() { marker.closePopup(); });
+
+});
+
+map.markerLayer.setGeoJSON(geoJson); 
+
+</script>
+
+</body>
 </html>
