@@ -31,7 +31,7 @@ $('#maincontent').masonry({
    columnWidth: 170,
    itemSelector: '.animalbox'
   }).imagesLoaded(function() {
-   $('#maincontent').masonry('reload');
+   $('#maincontent').masonry('reloadItems');
   });
 
 }); 
