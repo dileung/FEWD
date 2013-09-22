@@ -26,18 +26,24 @@
                 <h1>wwwild</h1>
       <!--           <h2>Mapping the natural world onto the world wide web</h2> -->
             </header>
-            <div id="searchbar"> 
-                 <form id="cse-search-box" action="http://google.com/cse">
-                  <input type="hidden" name="cx" value="YOUR SEARCH ENGINE ID goes here" />
-                  <input type="hidden" name="ie" value="UTF-8" />
-                  <input type="text" name="q" size="31" />
-                  <input type="submit" name="sa" value="Search" />
-                </form>
-            </div> 
+            <div id="search">
+              <input type="text" name="search" placeholder="Tofino"/> 
+            </div>
 
-            <a id="signin" href="#">Sign In</a> 
-            <a id="checkin" href="#">Check In</a>
-   
+            <div>
+              <a href="index.html"><img id="mapicon" src="images/map.jpg" width="50px"></a> 
+            </div>
+
+            <div>
+              <a href="viewall.html"><img id="listicon" src="images/list.jpg" width="50px"></a>
+            </div>
+
+           
+
+            <div>
+              <a id="signin" href="#">Sign In</a> 
+              <a id="checkin" href="#">Check In</a>
+            </div> 
 
   <div id='output'>
     click: <code id='click'></code><br/>
@@ -212,7 +218,113 @@ var geoJson = {
             coordinates: [-125.92323 , 49.12208]
         }
 
+    }, 
+   {
+        type: 'Feature',
+        properties: {
+            title: 'Bear',
+            description: '#drinking #lake',    
+            'marker-size': 'medium',
+            'marker-color': '#f0a', 
+            'image': 'images/bear1.jpg'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-125.85835 , 49.14882]
+        }
+
+    }, 
+    {
+        type: 'Feature',
+        properties: {
+            title: 'Bear',
+            description: 'mom and baby!',    
+            'marker-size': 'medium',
+            'marker-color': '#f0a', 
+            'image': 'images/bear2.jpg'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-125.81972 , 49.1386]
+        }
+
+    }, 
+    {
+        type: 'Feature',
+        properties: {
+            title: 'Sea Lions',
+            description: 'lol',    
+            'marker-size': 'medium',
+            'marker-color': '#f0a', 
+            'image': 'images/sealion.jpg'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-125.92031 , 49.1104]
+        }
+
+    }, 
+    {
+        type: 'Feature',
+        properties: {
+            title: 'Dolphins',
+            description: 'omg!!!',    
+            'marker-size': 'medium',
+            'marker-color': '#f0a', 
+            'image': 'images/dolphins.jpg'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-125.96409 , 49.09601]
+        }
+
+    }, 
+    {
+        type: 'Feature',
+        properties: {
+            title: 'Deers',
+            description: 'lol',    
+            'marker-size': 'medium',
+            'marker-color': '#f0a', 
+            'image': 'images/deers.jpg'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-125.87225 , 49.10961]
+        }
+
+    }, 
+    {
+        type: 'Feature',
+        properties: {
+            title: 'Grey Whales',
+            description: 'hello!! you are so friendly!',    
+            'marker-size': 'medium',
+            'marker-color': '#f0a', 
+            'image': 'images/greywhale1.jpg'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-125.97816 , 49.14769]
+        }
+
+    },
+   {
+        type: 'Feature',
+        properties: {
+            title: 'Bald Eagle',
+            description: '#family',    
+            'marker-size': 'medium',
+            'marker-color': '#f0a', 
+            'image': 'images/baldeagle.jpg'
+        },
+        geometry: {
+            type: 'Point',
+            coordinates: [-125.89766 , 49.10883]
+        }
+
     }
+
 
     ]}; 
 
