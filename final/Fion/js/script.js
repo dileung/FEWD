@@ -10,13 +10,16 @@ $('br + p').addClass('location').prepend('<img src="./images/marker.jpg" width="
 
 $('.like').hide(); 
 
-$('.animalpic').hover(function(){
-	$(this).animate({opacity: 0.9}, 50), $('.like').show();
-}, function(){
-	$(this).animate({opacity: 1}, 50), $('.like').hide(); 
-}); 
-
-
+$('.animalpic').each(function(){
+  $(this).hover(
+    function(){
+      $(this).animate({opacity: 0.9}, 50), $(this).siblings('.like').show(); 
+    },
+    function(){
+      $(this).animate({opacity: 0.9}, 50), $(this).siblings('.like').hide();
+    }
+  );
+});
 
 $('p + a').addClass('species').css('padding-left','20px') 
 
@@ -26,14 +29,14 @@ $('.species').hover(function(){
 	$(this).css('background-color','transparent'); 
 })
 
-
-$('#maincontent').masonry({
-   columnWidth: 170,
-   itemSelector: '.animalbox'
-  }).imagesLoaded(function() {
-   $('#maincontent').masonry('reloadItems');
-  });
-
+$(window).load(function(){
+  $('#maincontent').masonry({
+     columnWidth: 170,
+     itemSelector: '.animalbox'
+    }).imagesLoaded(function() {
+     $('#maincontent').masonry('reloadItems');
+    });
+}); 
 }); 
 
 
